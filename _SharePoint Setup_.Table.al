@@ -58,6 +58,7 @@ table 50497 "SharePoint Setup"
         field(1000; "SharePoint Site Id"; Text[200]) { DataClassification = SystemMetadata; Caption = 'SharePoint Site Id'; ToolTip = 'The unique Site ID of SharePoint site'; }
         field(1001; "Filename Chars to Parse"; Integer) { DataClassification = SystemMetadata; Caption = '# of Filename Chars to Parse'; ToolTip = 'Number of characters to use from filename (before .xml) for document matching'; MinValue = 0; }
         field(1005; "SharePoint Web Id"; Text[200]) { DataClassification = SystemMetadata; Caption = 'SharePoint Web Id'; ToolTip = 'The unique Web ID of SharePoint site'; }
+        field(1007; "SharePoint Domain"; Text[200]) { DataClassification = SystemMetadata; Caption = 'SharePoint Domain'; ToolTip = 'The domain of the SharePoint site'; }
     }
 
     keys

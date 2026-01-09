@@ -1,3 +1,6 @@
+/// <summary>
+/// Codeunit 3PL Archive Mgt. (ID 50401).
+/// </summary>
 codeunit 50401 "3PL Archive Mgt."
 {
     // Keeps track of what we send to and get from our warehouse partners
@@ -7,6 +10,15 @@ codeunit 50401 "3PL Archive Mgt."
     var 
         CurrentRunId: Guid;
 
+    /// <summary>
+    /// LogExport.
+    /// </summary>
+    /// <param name="DocNo">Code[20].</param>
+    /// <param name="ExternalNo">Code[35].</param>
+    /// <param name="FileName">Text.</param>
+    /// <param name="WhatStep">Option ExportOrder, ExportCOD, ImportPick, ImportShipment.</param>
+    /// <param name="ItWorked">Boolean.</param>
+    /// <param name="ProblemText">Text.</param>
     procedure LogExport(DocNo: Code[20]; ExternalNo: Code[35]; FileName: Text; WhatStep: Option ExportOrder, ExportCOD, ImportPick, ImportShipment; ItWorked: Boolean; ProblemText: Text)
     var
         Arch: Record "3PL Archive";

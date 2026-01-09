@@ -1,7 +1,7 @@
 
 {
   "id": "9b5b312c-0c2e-463b-9be7-b727e2c8e504",
-    "name": "3PL_SharePoint_Nixon",
+    "name": "3PL_SharePoint",
     "publisher": "SHN",
   "version": "1.0.6.2",
   "runtime": "15.0",
@@ -20,7 +20,7 @@
     "type": "al",
     "request": "attach",
     "environmentType": "Sandbox",
-    "environmentName": "NixonAU_Sandbox",
+    "environmentName": "Cronus_Sandbox",
     "breakOnError": "All",
     "breakOnRecordWrite": "None",
     "enableSqlInformationDebugger": true,
@@ -34,7 +34,7 @@
     "type": "al",
     "request": "launch",
     "environmentType": "Sandbox",
-    "environmentName": "NixonAU_Sandbox",
+    "environmentName": "Cronus_Sandbox",
     "startupObjectId": 22,
     "breakOnError": "All",
     "breakOnRecordWrite": "None",
@@ -49,7 +49,7 @@
     "type": "al",
     "request": "snapshotInitialize",
     "environmentType": "Production",
-    "environmentName": "AU_Production",
+    "environmentName": "Production",
     "breakOnNext": "WebClient",
     "executionContext": "DebugAndProfile"
   }

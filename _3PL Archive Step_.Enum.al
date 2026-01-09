@@ -1,3 +1,6 @@
+/// <summary>
+/// Enum 3PL Archive Step (ID 50401).
+/// </summary>
 enum 50401 "3PL Archive Step"
 {
     Extensible = true;

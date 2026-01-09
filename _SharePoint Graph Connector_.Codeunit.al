@@ -32,9 +32,10 @@ codeunit 50402 "SharePoint Graph Connector"
             exit; // Already resolved
 
         InitializeRequest(SetupKey, Request);
-        Request.SetRequestUri('https://graph.microsoft.com/v1.0/sites/nixonnow.sharepoint.com:/sites/businesscentralchannel');
-        if not ExecuteWithRetry(Request, Response, 3) then
-            Error(LastErrorMsg);
+    // Build URL from setup records instead of hardcoding
+    Request.SetRequestUri(BuildSiteUrl(SetupKey));
+    if not ExecuteWithRetry(Request, Response, 3) then
+        Error(LastErrorMsg);
 
         Response.Content().ReadAs(ResponseText);
         Json.ReadFrom(ResponseText);
@@ -60,7 +61,15 @@ codeunit 50402 "SharePoint Graph Connector"
         SharePointSetup."SharePoint Library Id" := DriveId;
         SharePointSetup.Modify();
     end;
-
+local procedure BuildSiteUrl(SetupKey: Code[10]): Text
+begin
+    if not SharePointSetup.Get(SetupKey) then
+        Error('Setup not found: %1', SetupKey);
+    
+    exit(StrSubstNo('https://graph.microsoft.com/v1.0/sites/%1:/sites/%2',
+        SharePointSetup."SharePoint Domain",
+        SharePointSetup."SharePoint Site Name"));
+end;
     // ------------------------------------------
     // Path normalization & validation (folder only)
     // ------------------------------------------

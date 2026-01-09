@@ -1,6 +1,7 @@
 table 50497 "SharePoint Setup"
 {
     DataClassification = SystemMetadata;
+    
     Caption = '3PL Integration Setup';
 
     fields

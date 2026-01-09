@@ -5,8 +5,8 @@ page 50497 "SharePoint Setup"
     Caption = '3PL Integration Setup';
     ApplicationArea = All;
     UsageCategory = Administration;
-    DeleteAllowed = false;
-    InsertAllowed = false;
+    DeleteAllowed = true;
+    InsertAllowed = true;
 
     layout
     {

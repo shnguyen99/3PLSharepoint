@@ -56,7 +56,6 @@ codeunit 50402 "SharePoint Graph Connector"
 
         // Update the setup record with resolved IDs
         SharePointSetup."SharePoint Site Id" := SiteId;
-        // FIXED: Was mapping to wrong fields before - now using correct field names
         SharePointSetup."SharePoint Web Id" := WebId;
         SharePointSetup."SharePoint Library Id" := DriveId;
         SharePointSetup.Modify();
